@@ -160,7 +160,7 @@ footer { background:#111; color:#ddd; padding:24px 0; margin-top:40px; }
 .contenedor-imagen3 {
     /* PROPIEDADES CLAVE: Tamaño del DIV */
     width: 1120px;  /* Ancho del contenedor (ejemplo) */
-    height: 60px; /* Alto del contenedor (ejemplo) */
+    height: 600px; /* Alto del contenedor (ejemplo) */
     
     /* Propiedades opcionales para visualización */
     margin: 20px auto; /* Centrar el div en la página */
@@ -174,7 +174,7 @@ footer { background:#111; color:#ddd; padding:24px 0; margin-top:40px; }
  */
 .imagen-redimensionada3 {
     /* PROPIEDADES CLAVE: Ajuste de tamaño de la imagen */
-    width: 10%; /* La imagen ocupa el 100% del ancho de su DIV padre (600px) */
+    width: 90%; /* La imagen ocupa el 100% del ancho de su DIV padre (600px) */
     height: 50%; /* La imagen ocupa el 100% del alto de su DIV padre (400px) */
     
     /* Propiedad clave para asegurar que la imagen se vea bien al estirarse/encogerse */
