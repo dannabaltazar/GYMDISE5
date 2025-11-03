@@ -1,0 +1,159 @@
+
+/* styles.css */
+body { font-family: 'Poppins', Arial, sans-serif; background: #fff; color:#222; }
+.navbar-brand img { height:64px; }
+.nav-link.active { color: #35c22a !important; font-weight:600; }
+.hero { padding:100px 0 80px; text-align:center; }
+.card-img-top { height:220px; object-fit:cover; }
+footer { background:#111; color:#ddd; padding:24px 0; margin-top:40px; }
+.service-title { font-weight:700; }
+/*
+ * 1. Estilos base y centrado del div contenedor
+ */
+.info-proyecto {
+    /* Centrar el div en la pantalla para mejor visualización */
+    width: 80%; /* Ancho del div */
+    margin: 50px auto; /* Centrado horizontal y margen superior */
+    padding: 20px;
+
+    /* Alinear todo el texto al centro */
+    text-align: center;
+    
+    /* Nota: No hay 'background-color' ni 'border' como solicitaste */
+}
+
+/*
+ * 2. Estilos para los Títulos H1 (Verde Claro)
+ */
+.titulo-inf241,
+.titulo-seccion {
+    /* Verde claro: #90EE90 */
+    color: #029a02;
+    font-size: 2.5em; /* Tamaño grande */
+    margin-top: 30px; /* Espacio superior */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/*
+ * 3. Estilos para el Subtítulo específico del Gimnasio (H1 Negro)
+ */
+.subtitulo-negro {
+    color: black;
+    font-size: 2.2em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 900; /* Extra-bold */
+}
+
+/*
+ * 4. Estilos para el Contenido H2 (Negro)
+ */
+.contenido-seccion {
+    color: black;
+    font-size: 1.4em;
+    margin: 5px 0; /* Espacio vertical pequeño */
+    font-weight: normal;
+}
+/*
+ * 1. Estilos del DIV contenedor (.contenedor-generalidades)
+ * Controla la POSICIÓN en la página.
+ */
+.contenedor-generalidades {
+    /* Define un tamaño para visualizar el área del div */
+    width: 1020px;
+    padding: 20px;
+    background-color: #15c721;
+    /* Posicionamiento del DIV en la página */
+    margin: 50px 0 0 02px; /* Margen superior 50px, pegado a la izquierda (20px de espacio) */
+
+    /* PROPIEDAD CLAVE: Alinea el texto (el H1) a la izquierda */
+    text-align: left;
+}
+
+/*
+ * 2. Estilos del H1 (.titulo-generalidades)
+ * Controla el COLOR de las letras.
+ */
+.titulo-generalidades {
+    /* Propiedad clave para cambiar el COLOR del texto */
+    color: #f1f4f1; /* Mantenemos el azul */
+
+    /* Otros estilos */
+    font-size: 3em;
+    font-family: 'Helvetica', sans-serif;
+    text-transform: uppercase;
+    /* Aseguramos que no tenga márgenes propios que lo separen */
+    margin: 0; 
+}
+/* Este código sobreescribe el color 'success' por uno más claro */
+.btn-success {
+    --bs-btn-bg: #c3e6cb; /* Fondo Verde Claro Pastel */
+    --bs-btn-border-color: #c3e6cb;
+    --bs-btn-hover-bg: #b1dfbb; /* Verde Claro al pasar el mouse */
+    --bs-btn-hover-border-color: #b1dfbb;
+    --bs-btn-color: #155724; /* Color de la letra: Verde Oscuro */
+}
+/* Asegura que el desplegable también use el nuevo color */
+.dropdown-item:active {
+    background-color: #c3e6cb; 
+}
+
+/*
+ * 1. Estilos para el DIV contenedor (.contenedor-imagen)
+ * Define el espacio total disponible para la imagen.
+ */
+.contenedor-imagen {
+    /* PROPIEDADES CLAVE: Tamaño del DIV */
+    width: 1000px;  /* Ancho del contenedor (ejemplo) */
+    height: 700px; /* Alto del contenedor (ejemplo) */
+    
+    /* Propiedades opcionales para visualización */
+    margin: 20px auto; /* Centrar el div en la página */
+    border: 2px solid #ccc; /* Un borde para ver el límite del div */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el tamaño del div */
+}
+
+/*
+ * 2. Estilos para la IMAGEN (.imagen-redimensionada)
+ * Controla cómo la imagen se ajusta dentro del DIV.
+ */
+.imagen-redimensionada {
+    /* PROPIEDADES CLAVE: Ajuste de tamaño de la imagen */
+    width: 100%; /* La imagen ocupa el 100% del ancho de su DIV padre (600px) */
+    height: 80%; /* La imagen ocupa el 100% del alto de su DIV padre (400px) */
+    
+    /* Propiedad clave para asegurar que la imagen se vea bien al estirarse/encogerse */
+    object-fit: cover; /* Recorta la imagen para que cubra todo el área sin distorsionarla */
+    /* object-fit: contain;  <-- Opcional: Escala la imagen para que sea visible por completo, dejando espacio vacío si es necesario. */
+}
+
+
+/*
+ * 1. Estilos para el DIV contenedor (.contenedor-imagen)
+ * Define el espacio total disponible para la imagen.
+ */
+.contenedor-imagen2 {
+    /* PROPIEDADES CLAVE: Tamaño del DIV */
+    width: 1120px;  /* Ancho del contenedor (ejemplo) */
+    height: 600px; /* Alto del contenedor (ejemplo) */
+    
+    /* Propiedades opcionales para visualización */
+    margin: 20px auto; /* Centrar el div en la página */
+    border: 2px solid #ccc; /* Un borde para ver el límite del div */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el tamaño del div */
+}
+
+/*
+ * 2. Estilos para la IMAGEN (.imagen-redimensionada)
+ * Controla cómo la imagen se ajusta dentro del DIV.
+ */
+.imagen-redimensionada2 {
+    /* PROPIEDADES CLAVE: Ajuste de tamaño de la imagen */
+    width: 100%; /* La imagen ocupa el 100% del ancho de su DIV padre (600px) */
+    height: 70%; /* La imagen ocupa el 100% del alto de su DIV padre (400px) */
+    
+    /* Propiedad clave para asegurar que la imagen se vea bien al estirarse/encogerse */
+    object-fit: cover; /* Recorta la imagen para que cubra todo el área sin distorsionarla */
+    /* object-fit: contain;  <-- Opcional: Escala la imagen para que sea visible por completo, dejando espacio vacío si es necesario. */
+}
