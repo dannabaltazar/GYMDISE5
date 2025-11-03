@@ -135,8 +135,8 @@ footer { background:#111; color:#ddd; padding:24px 0; margin-top:40px; }
  */
 .contenedor-imagen2 {
     /* PROPIEDADES CLAVE: Tamaño del DIV */
-    width: 1120px;  /* Ancho del contenedor (ejemplo) */
-    height: 600px; /* Alto del contenedor (ejemplo) */
+    width: 1000px;  /* Ancho del contenedor (ejemplo) */
+    height: 900px; /* Alto del contenedor (ejemplo) */
     
     /* Propiedades opcionales para visualización */
     margin: 20px auto; /* Centrar el div en la página */
@@ -150,11 +150,11 @@ footer { background:#111; color:#ddd; padding:24px 0; margin-top:40px; }
  */
 .imagen-redimensionada2 {
     /* PROPIEDADES CLAVE: Ajuste de tamaño de la imagen */
-    width: 100%; /* La imagen ocupa el 100% del ancho de su DIV padre (600px) */
-    height: 70%; /* La imagen ocupa el 100% del alto de su DIV padre (400px) */
-    
+    width: 95%; /* La imagen ocupa el 100% del ancho de su DIV padre (600px) */
+    height: 80%; /* La imagen ocupa el 100% del alto de su DIV padre (400px) */
+     object-fit: cover;
     /* Propiedad clave para asegurar que la imagen se vea bien al estirarse/encogerse */
-    object-fit: cover; /* Recorta la imagen para que cubra todo el área sin distorsionarla */
+    /* Recorta la imagen para que cubra todo el área sin distorsionarla */
     /* object-fit: contain;  <-- Opcional: Escala la imagen para que sea visible por completo, dejando espacio vacío si es necesario. */
 }
 .contenedor-imagen3 {
