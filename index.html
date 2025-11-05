@@ -6,6 +6,51 @@
   <title>Body Xtreme - Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
+  <style>
+    /* Estilos para el dropdown en hover */
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .dropdown-menu {
+      margin-top: 0;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-item {
+      padding: 10px 20px;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      transform: translateX(5px);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Estilo para indicar que hay un dropdown */
+    .nav-link.dropdown-toggle::after {
+      transition: transform 0.2s ease;
+    }
+
+    .nav-item.dropdown:hover .dropdown-toggle::after {
+      transform: rotate(-180deg);
+    }
+  </style>
 </head>
 <body>
 
@@ -20,25 +65,121 @@
     <div class="collapse navbar-collapse justify-content-end" id="nav">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link active" href="index.html">INICIO</a></li>
-        <li class="nav-item"><a class="nav-link" href="analisis.html">ANALISIS ESTRUCTURADO</a></li>
-        <li class="nav-item"><a class="nav-link" href="orientado.html">ORIENTADO A OBJETOS</a></li>
-        <li class="nav-item"><a class="nav-link" href="marco.html">MARCO TEORICO</a></li>
-        <li class="nav-item"><a class="nav-link" href="videos.html">VIDEOS</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACTOS</a></li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ANALISIS ESTRUCTURADO
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="analisis.html#diagramas">Diagramas de Flujo</a></li>
+            <li><a class="dropdown-item" href="analisis.html#dfd">DFD</a></li>
+            <li><a class="dropdown-item" href="analisis.html#diccionario">Diccionario de Datos</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="analisis.html">Ver Todo</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ORIENTADO A OBJETOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="orientado.html#clases">Diagrama de Clases</a></li>
+            <li><a class="dropdown-item" href="orientado.html#casos">Casos de Uso</a></li>
+            <li><a class="dropdown-item" href="orientado.html#secuencia">Diagramas de Secuencia</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="orientado.html">Ver Todo</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            MARCO TEORICO
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="marco.html#introduccion">Introducción</a></li>
+            <li><a class="dropdown-item" href="marco.html#metodologia">Metodología</a></li>
+            <li><a class="dropdown-item" href="marco.html#herramientas">Herramientas</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="marco.html">Ver Todo</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            VIDEOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="videos.html#presentacion">Presentación</a></li>
+            <li><a class="dropdown-item" href="videos.html#demostracion">Demostración</a></li>
+            <li><a class="dropdown-item" href="videos.html#tutoriales">Tutoriales</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="videos.html">Ver Todo</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            CONTACTOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="contact.html#formulario">Formulario de Contacto</a></li>
+            <li><a class="dropdown-item" href="contact.html#ubicacion">Ubicación</a></li>
+            <li><a class="dropdown-item" href="contact.html#redes">Redes Sociales</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="contact.html">Ver Todo</a></li>
+          </ul>
+        </li>
       </ul>
     </div>  
   </div>
 </nav>
 
-
-<section class="hero text-white d-flex align-items-center" 
-  style="background: url('images/banner.png') center/cover no-repeat; height: 80vh;">
-  <div class="container text-center">
-    <h1 class="display-5 fw-bold ">¡Empieza el cambio con Body Xtreme!</h1>
-    
-    <p class="lead">Entrena duro, vive fuerte. Programas para todos los niveles.</p>
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" style="height: 80vh;">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-</section>
+  
+  <div class="carousel-inner h-100">
+    <div class="carousel-item active h-100" style="background: url('images/banner.png') center/cover no-repeat;">
+      <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
+        <div>
+          <h1 class="display-4 fw-bold">¡Empieza el cambio con Body Xtreme!</h1>
+          <p class="lead">Entrena duro, vive fuerte. Programas para todos los niveles.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="carousel-item h-100" style="background: url('images/cardio.jpg') center/cover no-repeat;">
+      <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
+        <div>
+          <h1 class="display-4 fw-bold">Equipamiento de Primera</h1>
+          <p class="lead">Las mejores máquinas para tu entrenamiento</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="carousel-item h-100" style="background: url('images/cross.jpeg') center/cover no-repeat;">
+      <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
+        <div>
+          <h1 class="display-4 fw-bold">Clases Grupales</h1>
+          <p class="lead">Únete a nuestra comunidad fitness</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 
     <div class="info-proyecto">
