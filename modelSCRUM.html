@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Body Xtreme - Modelo SCRUM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    /* Estilos para el dropdown en hover */
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .dropdown-menu {
+      margin-top: 0;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-item {
+      padding: 10px 20px;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      transform: translateX(5px);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav-link.dropdown-toggle::after {
+      transition: transform 0.2s ease;
+    }
+
+    .nav-item.dropdown:hover .dropdown-toggle::after {
+      transform: rotate(-180deg);
+    }
+
+    .nav-link {
+      transition: all 0.3s ease;
+      color: #333 !important;
+    }
+
+    .nav-link:hover {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
+
+    .nav-link.active {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
+
+    .nav-item.dropdown:hover .nav-link {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+    }
+
+    /* ESTILOS PRINCIPALES SCRUM */
+    body {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e9 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+
+    .contenido-scrum {
+      min-height: 100vh;
+      padding: 80px 20px 60px 20px;
+    }
+
+    .contenido-scrum h2 {
+      color: #2e7d32;
+      font-weight: 900;
+      font-size: 2.2em;
+      margin: 50px 0 25px 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      padding-bottom: 15px;
+      text-align: left;
+    }
+
+    .contenido-scrum h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #2e7d32, #90ee90);
+      border-radius: 2px;
+    }
+
+    .contenido-scrum h2:first-of-type {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .contenido-scrum h2:first-of-type::after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+    }
+
+    .contenido-scrum p {
+      color: #444;
+      font-size: 1.05em;
+      line-height: 1.9;
+      margin-bottom: 18px;
+      text-align: justify;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #90ee90;
+      box-shadow: 0 2px 8px rgba(46, 125, 50, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .contenido-scrum p:hover {
+      box-shadow: 0 4px 15px rgba(46, 125, 50, 0.15);
+      transform: translateX(5px);
+    }
+
+    .contenido-scrum p:empty {
+      display: none;
+    }
+
+    .contenido-scrum {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* FOOTER MEJORADO */
+    footer {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #e8e8e8;
+      padding: 40px 20px;
+      margin-top: 60px;
+      border-top: 4px solid #2e7d32;
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .contenido-scrum h2 {
+        font-size: 1.8em;
+      }
+
+      .contenido-scrum p {
+        font-size: 0.95em;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contenido-scrum {
+        padding: 60px 15px;
+      }
+
+      .contenido-scrum h2 {
+        font-size: 1.4em;
+      }
+
+      .contenido-scrum p {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo.png" alt="Body Xtreme">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="nav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ANALISIS ESTRUCTURADO
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="analisis.html#diagramas">D. Modelo Ambiental</a></li>
+            <li><a class="dropdown-item" href="model.html">D. Modelo de comportamiento</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ORIENTADO A OBJETOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="orientado.html#clases">Diagrama Orientado a objetos</a></li>
+            <li><a class="dropdown-item" href="Casos.html">Diagrama Casos de Uso</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            MARCO TEORICO
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="marco.html#introduccion">Ver Marco teorico</a></li>
+            <li><a class="dropdown-item" href="modelSCRUM.html">Modelo SCRUM</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            VIDEOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="videos.html">Modelo Ambiental y Comportamiento</a></li>
+            <li><a class="dropdown-item" href="VidObj.html">Modelo Orientado a Objetos</a></li>
+            <li><a class="dropdown-item" href="VidCasos.html">Diagrama de casos de uso del Sistema</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            CONTACTOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="contact.html#formulario">Formulario de Contacto</a></li>
+            <li><a class="dropdown-item" href="RedesSoci.html">Ubicación y redes</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
+        </li>
+      </ul>
+    </div>  
+  </div>
+</nav>
+
+<div class="contenido-scrum">
+  <h2><i class="fas fa-layer-group"></i> Modelo SCRUM:</h2>
+  <p>El modelo SCRUM es un marco de trabajo ágil para el desarrollo incremental de software que se centra en la colaboración del equipo, la entrega rápida y continua de productos funcionales y la adaptabilidad a cambios durante el proyecto.
+  Una de las bases de este sistema es la entrega parcial y regular de los resultados. Es un modelo preparado para el trabajo bajo presión, donde la obtención de resultados rápidos, la creatividad y la productividad son imprescindibles.
+  </p>
+
+  <p>Este modelo cuenta con las siguientes características:</p>
+  <p>- Fomenta la colaboración de cada uno de los integrantes del equipo de trabajo.</p>
+  <p>- Auto organización: los equipos deben saber gestionar las cargas de trabajo y tener controlado el tiempo que invierten para cada tarea en todo momento.</p>
+  <p>- Está orientada a ofrecer soluciones o respuestas rápidas y efectivas a los requerimientos especificados por el cliente.</p>
+  <p>- Ofrece un alto valor comercial al usuario consiguiendo resultados en un periodo de tiempo inferior al de otros métodos.</p>
+  <p>- Es un método abierto y flexible en el que se priorizan las tareas para así adaptarse a las necesidades del consumidor en cada momento</p>
+  <p>Dada la naturaleza de la metodología scrum, es vital definir los tres principios sobre los que se sustenta:</p>
+
+  <h2><i class="fas fa-users"></i> Auto organización:</h2>
+  <p>El valor del scrum reside en la autonomía del equipo para organizar, repartir, y ejecutar tareas. En el proceso, todos colaboran y comparten recursos para llegar al mismo punto, aunque los miembros realicen funciones diferentes.</p>
+
+  <h2><i class="fas fa-tasks"></i> Priorización de las tareas:</h2>
+  <p>El equipo gestiona su backlog de tareas priorizándolas por importancia. El equipo trabajará en estos procesos de forma ordenada.</p>
+
+  <h2><i class="fas fa-clock"></i> Time Boxing:</h2>
+  <p>El objetivo es establecer un tiempo determinado o plazo para la consecución de tareas. El equipo realizará en un sprint de tiempo delimitado un bloque de actividades.
+  En SCRUM, el equipo se organiza en tres roles principales:
+  </p>
+
+  <p>- Product OWNER: Es el encargado de establecer las prioridades para maximizar el valor del trabajo. El propietario del producto es el que representa a la empresa frente al cliente. Debe ser una única persona la encargada, pero puede formar parte al mismo tiempo del equipo de desarrollo.</p>
+  <p>- SCRUM master: Es la persona que gestiona las tareas a desarrollar por el equipo de trabajo para que todos los integrantes conozcan y sepan cómo alcanzar los objetivos del producto.</p>
+  <p>- Equipo de desarrollo: Está formado por todas las personas que se encargan de dar forma a las tareas establecidas por el Product Owner que previamente ha ideado con el cliente.</p>
+  <p>- Stakeholders: Son los interesados en el desarrollo correcto del proceso. Es decir, se refiere a los patrocinadores, clientes, directivos o personas ajenas a la empresa que soliciten un trabajo. Se encargan de controlar que se está llevando a cabo lo que ellos han solicitado de manera efectiva.</p>
+
+  <p>El proceso comienza con la planificación del sprint, donde se seleccionan los elementos del backlog priorizados para trabajar en ese ciclo. Durante el sprint, el equipo trabaja en estas tareas sin cambios externos y realiza reuniones diarias de sincronización llamadas "daily scrum". Al final, se evalúa el producto entregado y se adapta el plan para el siguiente sprint según las necesidades.
+  SCRUM es especialmente útil para proyectos con requisitos cambiantes y donde se busca flexibilidad, rapidez y alta participación del cliente y del equipo para obtener resultados frecuentes y de alta calidad.
+  </p>
+</div>
+
+<footer class="text-center">
+  <p>&copy; 2025 Body Xtreme | Todos los derechos reservados</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

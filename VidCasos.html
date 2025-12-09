@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Body Xtreme - Videos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    /* Estilos para el dropdown en hover */
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .dropdown-menu {
+      margin-top: 0;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-item {
+      padding: 10px 20px;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      transform: translateX(5px);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav-link.dropdown-toggle::after {
+      transition: transform 0.2s ease;
+    }
+
+    .nav-item.dropdown:hover .dropdown-toggle::after {
+      transform: rotate(-180deg);
+    }
+
+    .nav-link {
+      transition: all 0.3s ease;
+      color: #333 !important;
+    }
+
+    .nav-link:hover {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
+
+    .nav-link.active {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
+
+    .nav-item.dropdown:hover .nav-link {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+    }
+
+    /* Estilos para Video */
+    .video-section {
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #e8f5e9 0%, #f8f9fa 100%);
+    }
+
+    .video-section h2 {
+      color: #2e7d32;
+      font-weight: bold;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .video-container {
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(46, 125, 50, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .video-container:hover {
+      box-shadow: 0 12px 40px rgba(46, 125, 50, 0.5);
+      transform: scale(1.02);
+    }
+
+    .video-container iframe {
+      display: block;
+      border-radius: 15px;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background-color: rgba(46, 125, 50, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border: 3px solid white;
+    }
+
+    .play-button i {
+      font-size: 50px;
+      color: white;
+      margin-left: 5px;
+    }
+
+    .video-thumbnail:hover .play-button {
+      background-color: #90ee90;
+      transform: translate(-50%, -50%) scale(1.2);
+      box-shadow: 0 8px 25px rgba(46, 125, 50, 0.6);
+    }
+
+    .video-thumbnail:hover .play-button i {
+      color: #2e7d32;
+    }
+
+    .video-thumbnail {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    .video-thumbnail img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 15px;
+      transition: filter 0.3s ease;
+    }
+
+    .video-thumbnail:hover img {
+      filter: brightness(0.8);
+    }
+
+    @media (max-width: 768px) {
+      .video-container iframe {
+        height: 400px;
+      }
+
+      .video-section h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .video-container iframe {
+        height: 250px;
+      }
+
+      .video-section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo.png" alt="Body Xtreme">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="nav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ANALISIS ESTRUCTURADO
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="analisis.html#diagramas">D. Modelo Ambiental</a></li>
+            <li><a class="dropdown-item" href="model.html">D. Modelo de comportamiento</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ORIENTADO A OBJETOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="orientado.html#clases">Diagrama Orientado a objetos</a></li>
+            <li><a class="dropdown-item" href="Casos.html">Diagrama Casos de Uso</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            MARCO TEORICO
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="marco.html#introduccion">Ver Marco teorico</a></li>
+            <li><a class="dropdown-item" href="modelSCRUM.html">Modelo SCRUM</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            VIDEOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="videos.html">Modelo Ambiental y Comportamiento</a></li>
+            <li><a class="dropdown-item" href="VidObj.html">Modelo Orientado a Objetos</a></li>
+            <li><a class="dropdown-item" href="VidCasos.html">Diagrama de casos de uso del Sistema</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            CONTACTOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="contact.html#formulario">Formulario de Contacto</a></li>
+            <li><a class="dropdown-item" href="RedesSoci.html">Ubicación y redes</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
+        </li>
+      </ul>
+    </div>  
+  </div>
+</nav>
+
+<section class="video-section" id="video1">
+  <div class="container">
+    <h2><i class="fas fa-video"></i> Video Explicativo del Diagrama de Casos de Uso:</h2>
+    
+    <div class="video-container">
+      <a href="https://www.youtube.com/watch?v=qS6h0K4VB0s" target="_blank" class="video-thumbnail">
+        <img src="https://img.youtube.com/vi/qS6h0K4VB0s/maxresdefault.jpg" alt="Diagrama de Casos de Uso" class="img-fluid">
+        <div class="play-button">
+          <i class="fas fa-play-circle"></i>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="text-center py-4 bg-dark text-white">
+  <div class="container">
+    <p class="mb-0">&copy; 2025 Body Xtreme | Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
