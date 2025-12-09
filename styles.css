@@ -1,231 +1,402 @@
-
 /* styles.css */
-body { font-family: 'Poppins', Arial, sans-serif; background: #fff; color:#222; } 
-.navbar-brand img { height:64px; }
-.nav-link.active { color: #35c22a !important; font-weight:600; }
-.hero { padding:100px 0 80px; text-align:center; }
-.card-img-top { height:220px; object-fit:cover; }
-footer { background:#111; color:#ddd; padding:24px 0; margin-top:40px; }
-.service-title { font-weight:700; }
-/*
- * 1. Estilos base y centrado del div contenedor
- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa; 
+  color: #222;
+  line-height: 1.6;
+}
+
+/* NAVBAR MEJORADO */
+.navbar {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f8f0 100%) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px 0;
+}
+
+.navbar-brand img { 
+  height: 64px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+.nav-link.active { 
+  color: #2e7d32 !important; 
+  font-weight: 600;
+  background-color: #90ee90;
+  border-radius: 8px;
+  padding: 8px 15px !important;
+}
+
+/* HERO CAROUSEL */
+.carousel {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.carousel-caption {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  border-radius: 0;
+}
+
+.carousel-caption h1 {
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  font-size: 3.5rem;
+}
+
+.carousel-caption p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+
+/* SECCIÓN INFO PROYECTO */
 .info-proyecto {
-    /* Centrar el div en la pantalla para mejor visualización */
-    width: 80%; /* Ancho del div */
-    margin: 50px auto; /* Centrado horizontal y margen superior */
-    padding: 20px;
-
-    /* Alinear todo el texto al centro */
-    text-align: center;
-    
-    /* Nota: No hay 'background-color' ni 'border' como solicitaste */
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 50px;
+  background: linear-gradient(135deg, #e8f5e9 0%, #f0f8f0 100%);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(46, 125, 50, 0.15);
+  border-left: 8px solid #2e7d32;
 }
 
-/*
- * 2. Estilos para los Títulos H1 (Verde Claro)
- */
-.titulo-inf241,
-.titulo-seccion {
-    /* Verde claro: #90EE90 */
-    color: #029a02;
-    font-size: 2.5em; /* Tamaño grande */
-    margin-top: 30px; /* Espacio superior */
-    margin-bottom: 10px;
-    font-weight: bold;
+.titulo-inf241 {
+  color: #2e7d32;
+  font-size: 2.8em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/*
- * 3. Estilos para el Subtítulo específico del Gimnasio (H1 Negro)
- */
 .subtitulo-negro {
-    color: black;
-    font-size: 2.2em;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-weight: 900; /* Extra-bold */
+  color: #1a1a1a;
+  font-size: 2.2em;
+  margin: 20px 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/*
- * 4. Estilos para el Contenido H2 (Negro)
- */
+.titulo-seccion {
+  color: #2e7d32;
+  font-size: 1.8em;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .contenido-seccion {
-    color: black;
-    font-size: 1.4em;
-    margin: 5px 0; /* Espacio vertical pequeño */
-    font-weight: normal;
+  color: #333;
+  font-size: 1.1em;
+  margin: 8px 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
-/*
- * 1. Estilos del DIV contenedor (.contenedor-generalidades)
- * Controla la POSICIÓN en la página.
- */
+
+/* GENERALIDADES SECCIÓN */
 .contenedor-generalidades {
-    /* Define un tamaño para visualizar el área del div */
-    width: 1020px;
-    padding: 20px;
-    background-color: #15c721;
-    /* Posicionamiento del DIV en la página */
-    margin: 50px 0 0 02px; /* Margen superior 50px, pegado a la izquierda (20px de espacio) */
-
-    /* PROPIEDAD CLAVE: Alinea el texto (el H1) a la izquierda */
-    text-align: left;
+  width: 95%;
+  max-width: 1200px;
+  margin: 60px auto 30px;
+  padding: 40px;
+  background: linear-gradient(135deg, #2e7d32 0%, #1e5c24 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(46, 125, 50, 0.25);
 }
 
-/*
- * 2. Estilos del H1 (.titulo-generalidades)
- * Controla el COLOR de las letras.
- */
 .titulo-generalidades {
-    /* Propiedad clave para cambiar el COLOR del texto */
-    color: #f1f4f1; /* Mantenemos el azul */
-
-    /* Otros estilos */
-    font-size: 3em;
-    font-family: 'Helvetica', sans-serif;
-    text-transform: uppercase;
-    /* Aseguramos que no tenga márgenes propios que lo separen */
-    margin: 0; 
-}
-/* Este código sobreescribe el color 'success' por uno más claro */
-.btn-success {
-    --bs-btn-bg: #c3e6cb; /* Fondo Verde Claro Pastel */
-    --bs-btn-border-color: #c3e6cb;
-    --bs-btn-hover-bg: #b1dfbb; /* Verde Claro al pasar el mouse */
-    --bs-btn-hover-border-color: #b1dfbb;
-    --bs-btn-color: #155724; /* Color de la letra: Verde Oscuro */
-}
-/* Asegura que el desplegable también use el nuevo color */
-.dropdown-item:active {
-    background-color: #c3e6cb; 
+  color: #ffffff;
+  font-size: 2.8em;
+  font-weight: 900;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-/*
- * 1. Estilos para el DIV contenedor (.contenedor-imagen)
- * Define el espacio total disponible para la imagen.
- */
-.contenedor-imagen {
-    /* PROPIEDADES CLAVE: Tamaño del DIV */
-    width: 1000px;  /* Ancho del contenedor (ejemplo) */
-    height: 700px; /* Alto del contenedor (ejemplo) */
-    
-    /* Propiedades opcionales para visualización */
-    margin: 20px auto; /* Centrar el div en la página */
-    border: 2px solid #ccc; /* Un borde para ver el límite del div */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el tamaño del div */
+/* ACORDEÓN MEJORADO */
+.accordion {
+  width: 95%;
+  max-width: 1200px;
+  margin: 30px auto 60px;
+  border: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-/*
- * 2. Estilos para la IMAGEN (.imagen-redimensionada)
- * Controla cómo la imagen se ajusta dentro del DIV.
- */
-.imagen-redimensionada {
-    /* PROPIEDADES CLAVE: Ajuste de tamaño de la imagen */
-    width: 100%; /* La imagen ocupa el 100% del ancho de su DIV padre (600px) */
-    height: 80%; /* La imagen ocupa el 100% del alto de su DIV padre (400px) */
-    
-    /* Propiedad clave para asegurar que la imagen se vea bien al estirarse/encogerse */
-    object-fit: cover; /* Recorta la imagen para que cubra todo el área sin distorsionarla */
-    /* object-fit: contain;  <-- Opcional: Escala la imagen para que sea visible por completo, dejando espacio vacío si es necesario. */
+.accordion-item {
+  background: white;
+  border: none;
+  border-bottom: 1px solid #e8f5e9;
+  transition: all 0.3s ease;
 }
 
-
-/*
- * 1. Estilos para el DIV contenedor (.contenedor-imagen)
- * Define el espacio total disponible para la imagen.
- */
-.contenedor-imagen2 {
-    /* PROPIEDADES CLAVE: Tamaño del DIV */
-    width: 1000px;  /* Ancho del contenedor (ejemplo) */
-    height: 900px; /* Alto del contenedor (ejemplo) */
-    
-    /* Propiedades opcionales para visualización */
-    margin: 20px auto; /* Centrar el div en la página */
-    border: 2px solid #ccc; /* Un borde para ver el límite del div */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el tamaño del div */
+.accordion-item:last-child {
+  border-bottom: none;
 }
 
-/*
- * 2. Estilos para la IMAGEN (.imagen-redimensionada)
- * Controla cómo la imagen se ajusta dentro del DIV.
- */
-.imagen-redimensionada2 {
-    /* PROPIEDADES CLAVE: Ajuste de tamaño de la imagen */
-    width: 95%; /* La imagen ocupa el 100% del ancho de su DIV padre (600px) */
-    height: 80%; /* La imagen ocupa el 100% del alto de su DIV padre (400px) */
-     object-fit: cover;
-    /* Propiedad clave para asegurar que la imagen se vea bien al estirarse/encogerse */
-    /* Recorta la imagen para que cubra todo el área sin distorsionarla */
-    /* object-fit: contain;  <-- Opcional: Escala la imagen para que sea visible por completo, dejando espacio vacío si es necesario. */
-}
-.contenedor-imagen3 {
-    /* PROPIEDADES CLAVE: Tamaño del DIV */
-    width: 1120px;  /* Ancho del contenedor (ejemplo) */
-    height: 600px; /* Alto del contenedor (ejemplo) */
-    
-    /* Propiedades opcionales para visualización */
-    margin: 20px auto; /* Centrar el div en la página */
-    border: 2px solid #ccc; /* Un borde para ver el límite del div */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el tamaño del div */
+.accordion-button {
+  background-color: #f8f9fa;
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 20px;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: none;
 }
 
-/*
- * 2. Estilos para la IMAGEN (.imagen-redimensionada)
- * Controla cómo la imagen se ajusta dentro del DIV.
- */
-.imagen-redimensionada3 {
-    /* PROPIEDADES CLAVE: Ajuste de tamaño de la imagen */
-    width: 90%; /* La imagen ocupa el 100% del ancho de su DIV padre (600px) */
-    height: 100%; /* La imagen ocupa el 100% del alto de su DIV padre (400px) */
-    
-    /* Propiedad clave para asegurar que la imagen se vea bien al estirarse/encogerse */
-    object-fit: cover; /* Recorta la imagen para que cubra todo el área sin distorsionarla */
-    /* object-fit: contain;  <-- Opcional: Escala la imagen para que sea visible por completo, dejando espacio vacío si es necesario. */
-}
-.contenedor-imagen4 {
-    /* PROPIEDADES CLAVE: Tamaño del DIV */
-    width: 1100px;  /* Ancho del contenedor (ejemplo) */
-    height: 1300px; /* Alto del contenedor (ejemplo) */
-    
-    /* Propiedades opcionales para visualización */
-    margin: 20px auto; /* Centrar el div en la página */
-    border: 2px solid #ccc; /* Un borde para ver el límite del div */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el tamaño del div */
+.accordion-button:not(.collapsed) {
+  background: linear-gradient(135deg, #90ee90 0%, #7dd37d 100%);
+  color: #1a1a1a;
+  box-shadow: none;
+  font-weight: 700;
 }
 
-/*
- * 2. Estilos para la IMAGEN (.imagen-redimensionada)
- * Controla cómo la imagen se ajusta dentro del DIV.
- */
-.imagen-redimensionada4 {
-    /* PROPIEDADES CLAVE: Ajuste de tamaño de la imagen */
-    width: 90%; /* La imagen ocupa el 100% del ancho de su DIV padre (600px) */
-    height: 85%; /* La imagen ocupa el 100% del alto de su DIV padre (400px) */
-    
-    /* Propiedad clave para asegurar que la imagen se vea bien al estirarse/encogerse */
-    object-fit: cover; /* Recorta la imagen para que cubra todo el área sin distorsionarla */
-    /* object-fit: contain;  <-- Opcional: Escala la imagen para que sea visible por completo, dejando espacio vacío si es necesario. */
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: #2e7d32;
+  background-color: #e8f5e9;
 }
+
+.accordion-button.collapsed {
+  background-color: #f8f9fa;
+  color: #2e7d32;
+}
+
+.accordion-button:hover:not(.collapsed) {
+  background: linear-gradient(135deg, #90ee90 0%, #7dd37d 100%);
+}
+
+.accordion-body {
+  background-color: #fafbfa;
+  padding: 25px;
+  color: #333;
+  line-height: 1.8;
+  font-size: 1em;
+}
+
+.accordion-body p {
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+.accordion-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* SERVICIOS CARDS */
+.card {
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background: white;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(46, 125, 50, 0.2);
+}
+
+.card-img-top { 
+  height: 220px; 
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 25px;
+  background: linear-gradient(135deg, #fafbfa 0%, #f0f8f0 100%);
+}
+
+.service-title { 
+  font-weight: 800;
+  color: #2e7d32;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.card-footer {
+  background: white !important;
+  border-top: 2px solid #e8f5e9;
+  padding: 15px;
+}
+
+.btn-outline-success {
+  color: #2e7d32;
+  border-color: #2e7d32;
+  border-width: 2px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover {
+  background-color: #2e7d32;
+  color: white;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+  transform: scale(1.05);
+}
+
+/* GALERÍA */
+.row.g-3 {
+  padding: 20px;
+}
+
+.row.g-3 img {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.row.g-3 img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.2);
+}
+
+/* CONTENEDORES DE IMÁGENES */
+.contenedor-imagen,
+.contenedor-imagen2,
+.contenedor-imagen3,
+.contenedor-imagen4,
 .contenedor-imagen5 {
-    /* PROPIEDADES CLAVE: Tamaño del DIV */
-    width: 1120px;  /* Ancho del contenedor (ejemplo) */
-    height: 1760px; /* Alto del contenedor (ejemplo) */
-    
-    /* Propiedades opcionales para visualización */
-    margin: 20px auto; /* Centrar el div en la página */
-    border: 2px solid #ccc; /* Un borde para ver el límite del div */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el tamaño del div */
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(46, 125, 50, 0.15);
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-/*
- * 2. Estilos para la IMAGEN (.imagen-redimensionada)
- * Controla cómo la imagen se ajusta dentro del DIV.
- */
+.contenedor-imagen:hover,
+.contenedor-imagen2:hover,
+.contenedor-imagen3:hover,
+.contenedor-imagen4:hover,
+.contenedor-imagen5:hover {
+  box-shadow: 0 12px 40px rgba(46, 125, 50, 0.25);
+  transform: translateY(-5px);
+}
+
+.imagen-redimensionada,
+.imagen-redimensionada2,
+.imagen-redimensionada3,
+.imagen-redimensionada4,
 .imagen-redimensionada5 {
-    /* PROPIEDADES CLAVE: Ajuste de tamaño de la imagen */
-    width: 90%; /* La imagen ocupa el 100% del ancho de su DIV padre (600px) */
-    height: 90%; /* La imagen ocupa el 100% del alto de su DIV padre (400px) */
-    
-    /* Propiedad clave para asegurar que la imagen se vea bien al estirarse/encogerse */
-    object-fit: cover; /* Recorta la imagen para que cubra todo el área sin distorsionarla */
-    /* object-fit: contain;  <-- Opcional: Escala la imagen para que sea visible por completo, dejando espacio vacío si es necesario. */
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* SECCIONES CON TÍTULOS */
+.container h2 {
+  color: #2e7d32;
+  font-weight: 800;
+  font-size: 2.2em;
+  margin: 50px 0 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #2e7d32, transparent);
+  border-radius: 2px;
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #e8e8e8;
+  padding: 30px 0;
+  margin-top: 60px;
+  border-top: 4px solid #2e7d32;
+}
+
+footer p {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .titulo-inf241,
+  .titulo-generalidades {
+    font-size: 1.8em;
+  }
+
+  .accordion-button {
+    font-size: 1em;
+    padding: 15px;
+  }
+
+  .contenedor-generalidades {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-caption h1 {
+    font-size: 1.5rem;
+  }
+
+  .titulo-inf241 {
+    font-size: 1.5em;
+  }
+
+  .accordion {
+    margin: 20px auto;
+  }
+
+  .info-proyecto {
+    padding: 20px;
+  }
 }
