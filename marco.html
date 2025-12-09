@@ -1,7 +1,207 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Gallery - Body Xtreme</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="styles.css" rel="stylesheet"></head><body>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Body Xtreme - Marco Teórico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    /* Estilos para el dropdown en hover */
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .dropdown-menu {
+      margin-top: 0;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-item {
+      padding: 10px 20px;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      transform: translateX(5px);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav-link.dropdown-toggle::after {
+      transition: transform 0.2s ease;
+    }
+
+    .nav-item.dropdown:hover .dropdown-toggle::after {
+      transform: rotate(-180deg);
+    }
+
+    .nav-link {
+      transition: all 0.3s ease;
+      color: #333 !important;
+    }
+
+    .nav-link:hover {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
+
+    .nav-link.active {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
+
+    .nav-item.dropdown:hover .nav-link {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+    }
+
+    /* ESTILOS PRINCIPALES MARCO */
+    body {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e9 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+
+    .container.py-5 {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px 60px 20px !important;
+      min-height: 100vh;
+    }
+
+    .container h2 {
+      color: #2e7d32;
+      font-weight: 900;
+      font-size: 2.2em;
+      margin: 50px 0 25px 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      padding-bottom: 15px;
+      text-align: left;
+    }
+
+    .container h2:first-of-type {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .container h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #2e7d32, #90ee90);
+      border-radius: 2px;
+    }
+
+    .container h2:first-of-type::after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+    }
+
+    .container h3 {
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 1.5em;
+      margin: 35px 0 20px 0;
+      letter-spacing: 1px;
+    }
+
+    .container p {
+      color: #444;
+      font-size: 1.05em;
+      line-height: 1.9;
+      margin-bottom: 18px;
+      text-align: justify;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #90ee90;
+      box-shadow: 0 2px 8px rgba(46, 125, 50, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .container p:hover {
+      box-shadow: 0 4px 15px rgba(46, 125, 50, 0.15);
+      transform: translateX(5px);
+    }
+
+    /* FOOTER MEJORADO */
+    footer {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #e8e8e8;
+      padding: 40px 20px;
+      margin-top: 60px;
+      border-top: 4px solid #2e7d32;
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .container h2 {
+        font-size: 1.8em;
+      }
+
+      .container h3 {
+        font-size: 1.2em;
+      }
+
+      .container p {
+        font-size: 0.95em;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container.py-5 {
+        padding: 60px 15px !important;
+      }
+
+      .container h2 {
+        font-size: 1.4em;
+      }
+
+      .container h3 {
+        font-size: 1em;
+      }
+
+      .container p {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
   <div class="container">
@@ -13,73 +213,91 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="nav">
       <ul class="navbar-nav">
-             <li class="nav-item"><a class="nav-link active" href="index.html">INICIO</a></li>
-        <li class="nav-item"><a class="nav-link" href="analisis.html">ANALISIS ESTRUCTURADO</a></li>
-        <li class="nav-item"><a class="nav-link" href="orientado.html">ORIENTADO A OBJETOS</a></li>
-        <li class="nav-item"><a class="nav-link" href="marco.html">MARCO TEORICO</a></li>
-        <li class="nav-item"><a class="nav-link" href="videos.html">VIDEOS</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACTOS</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ANALISIS ESTRUCTURADO
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="analisis.html#diagramas">D. Modelo Ambiental</a></li>
+            <li><a class="dropdown-item" href="model.html">D. Modelo de comportamiento</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ORIENTADO A OBJETOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="orientado.html#clases">Diagrama Orientado a objetos</a></li>
+            <li><a class="dropdown-item" href="Casos.html">Diagrama Casos de Uso</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            MARCO TEORICO
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="marco.html#introduccion">Ver Marco teorico</a></li>
+            <li><a class="dropdown-item" href="modelSCRUM.html">Modelo SCRUM</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            VIDEOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="videos.html">Modelo Ambiental y Comportamiento</a></li>
+            <li><a class="dropdown-item" href="VidObj.html">Modelo Orientado a Objetos</a></li>
+            <li><a class="dropdown-item" href="VidCasos.html">Diagrama de casos de uso del Sistema</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            CONTACTOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="contact.html#formulario">Formulario de Contacto</a></li>
+            <li><a class="dropdown-item" href="RedesSoci.html">Ubicación y redes</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
+        </li>
       </ul>
-    </div>
+    </div>  
   </div>
 </nav>
 
 <div class="container py-5">
-  <h2 class="mb-4">Marco teorico</h2>
-  <h2>Sistema de información:</h2>
-  <p>El sistema de información permite manejar grandes volúmenes de datos y convertir esa información en conocimientos útiles para la organización, mediante la integración de componentes tecnológicos y humanos.
-Todo sistema de información se compone de una serie de recursos interconectados y en interacción, bien organizados y dispuestos del modo más conveniente en relación con un propósito informativo determinado, que puede ser recabar información personal, procesar estadísticas, organizar archivos, entre otros.
-Los sistemas de información pueden presentar diferencias, pero generalmente recolectan y clasifican datos, que son procesados por personas y/o con recursos informáticos, para que sean fáciles de comprender y recuperar. Así, esta información queda almacenada para ser consultada de manera sencilla o para ser divulgada cuando sea necesario.
-Un sistema de información presenta las siguientes características:
-</p>
-<p></p>
-<p>- Tiene una organización determinada. Está organizado de forma tal que funciona correctamente para que la información esté bien clasificada y sea simple de comprender.
-</p>
-<p>- Está conformado por elementos informáticos y no informáticos. Incluye computadoras, programas, aplicaciones y otros elementos tecnológicos, pero también está compuesto por personas y procedimientos que garantizan su funcionamiento.</p>
-<p>- Debe ser seguro. Tiene que contar con herramientas tecnológicas que protejan la información, para que solo determinadas personas puedan consultarla y para que no se pierdan datos.</p>
-<p>- Debe poder ser actualizado. Tiene que ser lo suficientemente versátil para poder recolectar nuevos datos y transformarlos en información útil. Además, debe poder adaptarse a nuevas tecnologías</p>
-
-<p>- Se emplea con distintos objetivos. Sirve para almacenar información que se utiliza para tomar decisiones, recolectar datos de clientes, dirigir las actividades de una organización, implementar cambios, realizar planificaciones, entre otros fines.</p>
-<h3>Las actividades son los pasos necesarios para que un sistema de información esté bien organizado. Estas son:</h3>
-<p>- Recopilación. Consiste en reunir los datos relevantes para la organización. Por ejemplo, cuando se indica qué tareas realiza cada empleado de una compañía.</p>
-<p>- Almacenamiento. Consiste en guardar los datos recopilados, de forma tal que estén bien organizados y categorizados. Por ejemplo, se pueden clasificar las tareas de cada empleado de una compañía según el departamento al que pertenece o la etapa del proceso productivo.
-</p>
-<p>- Procesamiento. Consiste en analizar los datos para generar información útil, significativa y fácil de comprender. Por ejemplo, se pueden realizar gráficos e informes sobre las tareas de cada empleado.</p>
-<p>- Distribución. Consiste en enviar la información a las personas, áreas, empresas u organismos que sean pertinentes. Por ejemplo, se pueden enviar los gráficos y los informes a los directores de cada área.</p>
-<p>- Retroalimentación. Consiste en realizar una evaluación sobre las actividades anteriores. Por ejemplo, los directores de cada área indican si hay información faltante o que se debe corregir.</p>
-
-<h2>Modelo SCRUM:</h2>
-<p>El modelo SCRUM es un marco de trabajo ágil para el desarrollo incremental de software que se centra en la colaboración del equipo, la entrega rápida y continua de productos funcionales y la adaptabilidad a cambios durante el proyecto.
-Una de las bases de este sistema es la entrega parcial y regular de los resultados. Es un modelo preparado para el trabajo bajo presión, donde la obtención de resultados rápidos, la creatividad y la productividad son imprescindibles.
-</p>
-<p></p>
-<p>Este modelo cuenta con las siguientes características:</p>
-<p>- Fomenta la colaboración de cada uno de los integrantes del equipo de trabajo.</p>
-<p>- Auto organización: los equipos deben saber gestionar las cargas de trabajo y tener controlado el tiempo que invierten para cada tarea en todo momento.</p>
-<p>- Está orientada a ofrecer soluciones o respuestas rápidas y efectivas a los requerimientos especificados por el cliente.</p>
-<p>- Ofrece un alto valor comercial al usuario consiguiendo resultados en un periodo de tiempo inferior al de otros métodos.</p>
-<p>- Es un método abierto y flexible en el que se priorizan las tareas para así adaptarse a las necesidades del consumidor en cada momento</p>
-<p>Dada la naturaleza de la metodología scrum, es vital definir los tres principios sobre los que se sustenta:</p>
-<p></p>
-<h2>Auto organización:</h2>
-<p>El valor del scrum reside en la autonomía del equipo para organizar, repartir, y ejecutar tareas. En el proceso, todos colaboran y comparten recursos para llegar al mismo punto, aunque los miembros realicen funciones diferentes.</p>
-<h2>Priorización de las tareas:</h2>
-<p>El equipo gestiona su backlog de tareas priorizándolas por importancia. El equipo trabajará en estos procesos de forma ordenada.</p>
-<h2>Time Boxing:</h2>
-<p>El objetivo es establecer un tiempo determinado o plazo para la consecución de tareas. El equipo realizará en un sprint de tiempo delimitado un bloque de actividades.
-En SCRUM, el equipo se organiza en tres roles principales:
-</p>
-<p></p>
-<p>- Product OWNER: Es el encargado de establecer las prioridades para maximizar el valor del trabajo. El propietario del producto es el que representa a la empresa frente al cliente. Debe ser una única persona la encargada, pero puede formar parte al mismo tiempo del equipo de desarrollo.</p>
-<p>- SCRUM master: Es la persona que gestiona las tareas a desarrollar por el equipo de trabajo para que todos los integrantes conozcan y sepan cómo alcanzar los objetivos del producto.</p>
-<p>- Equipo de desarrollo: Está formado por todas las personas que se encargan de dar forma a las tareas establecidas por el Product Owner que previamente ha ideado con el cliente.</p>
-<p>- Stakeholders: Son los interesados en el desarrollo correcto del proceso. Es decir, se refiere a los patrocinadores, clientes, directivos o personas ajenas a la empresa que soliciten un trabajo. Se encargan de controlar que se está llevando a cabo lo que ellos han solicitado de manera efectiva.</p>
-<p></p>
-<p>El proceso comienza con la planificación del sprint, donde se seleccionan los elementos del backlog priorizados para trabajar en ese ciclo. Durante el sprint, el equipo trabaja en estas tareas sin cambios externos y realiza reuniones diarias de sincronización llamadas "daily scrum". Al final, se evalúa el producto entregado y se adapta el plan para el siguiente sprint según las necesidades.
-SCRUM es especialmente útil para proyectos con requisitos cambiantes y donde se busca flexibilidad, rapidez y alta participación del cliente y del equipo para obtener resultados frecuentes y de alta calidad.
-</p>
-
+  <h2><i class="fas fa-book"></i> Marco Teórico</h2>
+  
+  <h2><i class="fas fa-server"></i> Sistema de Información:</h2>
+  <p>El sistema de información permite manejar grandes volúmenes de datos y convertir esa información en conocimientos útiles para la organización, mediante la integración de componentes tecnológicos y humanos. Todo sistema de información se compone de una serie de recursos interconectados y en interacción, bien organizados y dispuestos del modo más conveniente en relación con un propósito informativo determinado, que puede ser recabar información personal, procesar estadísticas, organizar archivos, entre otros.</p>
+  
+  <p>Los sistemas de información pueden presentar diferencias, pero generalmente recolectan y clasifican datos, que son procesados por personas y/o con recursos informáticos, para que sean fáciles de comprender y recuperar. Así, esta información queda almacenada para ser consultada de manera sencilla o para ser divulgada cuando sea necesario.</p>
+  
+  <p>Un sistema de información presenta las siguientes características:</p>
+  <p>- Tiene una organización determinada. Está organizado de forma tal que funciona correctamente para que la información esté bien clasificada y sea simple de comprender.</p>
+  <p>- Está conformado por elementos informáticos y no informáticos. Incluye computadoras, programas, aplicaciones y otros elementos tecnológicos, pero también está compuesto por personas y procedimientos que garantizan su funcionamiento.</p>
+  <p>- Debe ser seguro. Tiene que contar con herramientas tecnológicas que protejan la información, para que solo determinadas personas puedan consultarla y para que no se pierdan datos.</p>
+  <p>- Debe poder ser actualizado. Tiene que ser lo suficientemente versátil para poder recolectar nuevos datos y transformarlos en información útil. Además, debe poder adaptarse a nuevas tecnologías.</p>
+  <p>- Se emplea con distintos objetivos. Sirve para almacenar información que se utiliza para tomar decisiones, recolectar datos de clientes, dirigir las actividades de una organización, implementar cambios, realizar planificaciones, entre otros fines.</p>
+  
+  <h3><i class="fas fa-tasks"></i> Las actividades son los pasos necesarios para que un sistema de información esté bien organizado. Estas son:</h3>
+  <p>- <strong>Recopilación.</strong> Consiste en reunir los datos relevantes para la organización. Por ejemplo, cuando se indica qué tareas realiza cada empleado de una compañía.</p>
+  <p>- <strong>Almacenamiento.</strong> Consiste en guardar los datos recopilados, de forma tal que estén bien organizados y categorizados. Por ejemplo, se pueden clasificar las tareas de cada empleado de una compañía según el departamento al que pertenece o la etapa del proceso productivo.</p>
+  <p>- <strong>Procesamiento.</strong> Consiste en analizar los datos para generar información útil, significativa y fácil de comprender. Por ejemplo, se pueden realizar gráficos e informes sobre las tareas de cada empleado.</p>
+  <p>- <strong>Distribución.</strong> Consiste en enviar la información a las personas, áreas, empresas u organismos que sean pertinentes. Por ejemplo, se pueden enviar los gráficos y los informes a los directores de cada área.</p>
+  <p>- <strong>Retroalimentación.</strong> Consiste en realizar una evaluación sobre las actividades anteriores. Por ejemplo, los directores de cada área indican si hay información faltante o que se debe corregir.</p>
 </div>
-<footer class="text-center">&copy; 2025 Body Xtreme</footer>
+
+<footer class="text-center">
+  <p>&copy; 2025 Body Xtreme | Todos los derechos reservados</p>
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body></html>
+</body>
+</html>
