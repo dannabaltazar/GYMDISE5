@@ -1,7 +1,83 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Services - Body Xtreme</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="styles.css" rel="stylesheet"></head><body>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Body Xtreme - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    /* Estilos para el dropdown en hover */
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .dropdown-menu {
+      margin-top: 0;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-item {
+      padding: 10px 20px;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      transform: translateX(5px);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Estilo para indicar que hay un dropdown */
+    .nav-link.dropdown-toggle::after {
+      transition: transform 0.2s ease;
+    }
+
+    .nav-item.dropdown:hover .dropdown-toggle::after {
+      transform: rotate(-180deg);
+    }
+
+    /* NUEVOS ESTILOS PARA EL HOVER Y ACTIVE */
+    .nav-link {
+      transition: all 0.3s ease;
+      color: #333 !important;
+    }
+
+    .nav-link:hover {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
+
+    .nav-link.active {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
+
+    .nav-item.dropdown:hover .nav-link {
+      background-color: #90ee90;
+      color: #2e7d32 !important;
+    }
+  </style>
+</head>
+<body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
   <div class="container">
@@ -13,14 +89,62 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="nav">
       <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link active" href="index.html">INICIO</a></li>
-        <li class="nav-item"><a class="nav-link" href="analisis.html">ANALISIS ESTRUCTURADO</a></li>
-        <li class="nav-item"><a class="nav-link" href="orientado.html">ORIENTADO A OBJETOS</a></li>
-        <li class="nav-item"><a class="nav-link" href="marco.html">MARCO TEORICO</a></li>
-        <li class="nav-item"><a class="nav-link" href="videos.html">VIDEOS</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACTOS</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ANALISIS ESTRUCTURADO
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="analisis.html#diagramas">D. Modelo Ambiental</a></li>
+            <li><a class="dropdown-item" href="model.html">D. Modelo de comportamiento</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ORIENTADO A OBJETOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="orientado.html#clases">Diagrama Orientado a objetos</a></li>
+            <li><a class="dropdown-item" href="Casos.html">Diagrama Casos de Uso</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            MARCO TEORICO
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="marco.html#introduccion">Ver Marco teorico</a></li>
+            <li><a class="dropdown-item" href="modelSCRUM.html">Modelo SCRUM</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            VIDEOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="videos.html">Modelo Ambiental y Comportamiento</a></li>
+            <li><a class="dropdown-item" href="VidObj.html">Modelo Orientado a Objetos</a></li>
+            <li><a class="dropdown-item" href="VidCasos.html">Diagrama de casos de uso del Sistema</a></li>
+          </ul>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            CONTACTOS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="contact.html#formulario">Formulario de Contacto</a></li>
+            <li><a class="dropdown-item" href="RedesSoci.html">Ubicación y redes</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
+        </li>
       </ul>
-    </div>
+    </div>  
   </div>
 </nav>
 
