@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Body Xtreme - Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
   <style>
     /* Estilos para el dropdown en hover */
@@ -75,6 +76,112 @@
       background-color: #90ee90;
       color: #2e7d32 !important;
     }
+
+    /* ESTILOS PARA TOOLTIPS PERSONALIZADOS */
+    .dropdown-item-tooltip {
+      position: relative;
+    }
+
+    .tooltip-description {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      background-color: #2e7d32;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.9em;
+      white-space: normal;
+      width: 220px;
+      margin-left: 8px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1050;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      line-height: 1.4;
+    }
+
+    .tooltip-description::after {
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 15px;
+      border: 6px solid transparent;
+      border-right-color: #2e7d32;
+    }
+
+    .tooltip-description a.tooltip-link {
+      display: block;
+      padding: 10px 0;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.2s ease;
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+
+    .tooltip-description a.tooltip-link:last-child {
+      border-bottom: none;
+    }
+
+    .tooltip-description a.tooltip-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding-left: 8px;
+      color: #90ee90;
+    }
+
+    /* DESCRIPCIÓN EMERGENTE AL HOVER */
+    .tooltip-link-description {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background-color: #1a4d1a;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.85em;
+      white-space: normal;
+      width: 250px;
+      margin-left: 8px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1051;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      line-height: 1.5;
+      display: none;
+    }
+
+    .tooltip-link-description::before {
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 15px;
+      border: 6px solid transparent;
+      border-right-color: #1a4d1a;
+    }
+
+    .tooltip-link:hover .tooltip-link-description {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .tooltip-link {
+      position: relative;
+    }
+
+    .dropdown-item-tooltip:hover .tooltip-description {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-item-tooltip:hover .dropdown-item {
+      background-color: #e8f5e9 !important;
+      color: #2e7d32 !important;
+    }
   </style>
 </head>
 <body>
@@ -96,8 +203,29 @@
             ANALISIS ESTRUCTURADO
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="analisis.html#diagramas">D. Modelo Ambiental</a></li>
-            <li><a class="dropdown-item" href="model.html">D. Modelo de comportamiento</a></li>
+            <li class="dropdown-item-tooltip">
+              <a class="dropdown-item" href="#">D. Modelo Ambiental</a>
+              <div class="tooltip-description">
+                <a href="analisis.html#declaracion" class="tooltip-link">Ver Declaración de Propósitos</a>
+                <a href="analisis.html#contexto" class="tooltip-link">Ver Diagrama de Contexto</a>
+                <a href="analisis.html#acontesimientos" class="tooltip-link">Ver Lista de Acontesimientos</a>
+                <a href="analisis.html#descripcion" class="tooltip-link">
+                  Descripción
+                  <div class="tooltip-link-description">Diagrama que muestra el contexto, actores externos y factores ambientales que afectan al sistema de registro del gimnasio Body Xtreme.</div>
+                </a>
+              </div>
+            </li>
+            <li class="dropdown-item-tooltip">
+              <a class="dropdown-item" href="#">D. Modelo de Comportamiento</a>
+              <div class="tooltip-description">
+                <a href="model.html#introduccion" class="tooltip-link">Ver Nivel 1</a>
+                <a href="model.html#nivel0" class="tooltip-link">Ver Nivel 2</a>
+                <a href="model.html#descripcion" class="tooltip-link">
+                  Descripción
+                  <div class="tooltip-link-description">Diagrama que describe los procesos dinámicos, flujos de datos e interacciones del sistema a lo largo del tiempo.</div>
+                </a>
+              </div>
+            </li>
           </ul>
         </li>
         
@@ -106,8 +234,14 @@
             ORIENTADO A OBJETOS
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="orientado.html#clases">Diagrama Orientado a objetos</a></li>
-            <li><a class="dropdown-item" href="Casos.html">Diagrama Casos de Uso</a></li>
+            <li class="dropdown-item-tooltip">
+              <a class="dropdown-item" href="orientado.html#clases">Diagrama Orientado a objetos</a>
+              <div class="tooltip-description">Diagrama de clases que muestra las entidades principales del sistema (Miembro, Membresía, Instructor, Pago) y sus relaciones.</div>
+            </li>
+            <li class="dropdown-item-tooltip">
+              <a class="dropdown-item" href="Casos.html">Diagrama Casos de Uso</a>
+              <div class="tooltip-description">Diagrama que visualiza las interacciones entre actores (Miembros, Administradores, Instructores) y los casos de uso del sistema.</div>
+            </li>
           </ul>
         </li>
         
@@ -116,8 +250,14 @@
             MARCO TEORICO
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="marco.html#introduccion">Ver Marco teorico</a></li>
-            <li><a class="dropdown-item" href="modelSCRUM.html">Modelo SCRUM</a></li>
+            <li class="dropdown-item-tooltip">
+              <a class="dropdown-item" href="marco.html#introduccion">Ver Marco teorico</a>
+              <div class="tooltip-description">Fundamentación teórica del proyecto que incluye conceptos de análisis de sistemas, ingeniería de software y metodologías aplicadas.</div>
+            </li>
+            <li class="dropdown-item-tooltip">
+              <a class="dropdown-item" href="modelSCRUM.html">Modelo SCRUM</a>
+              <div class="tooltip-description">Metodología ágil utilizada para la planificación y desarrollo iterativo del sistema Body Xtreme con sprints y entregas continuas.</div>
+            </li>
           </ul>
         </li>
         
@@ -127,10 +267,18 @@
           </a>
           <ul class="dropdown-menu">
             
-            <li><a class="dropdown-item" href="videos.html">Modelo Ambiental y Comportamiento</a></li>
-            <li><a class="dropdown-item" href="VidObj.html">Modelo Orientado a Objetos</a></li>
-            <li><a class="dropdown-item" href="VidCasos.html">Diagrama de casos de uso del Sistema</a></li>
-          </ul>
+            <li class="dropdown-item-tooltip">
+              <a class="dropdown-item" href="videos.html">Modelo Ambiental y Comportamiento</a>
+              <div class="tooltip-description">Videos explicativos de los diagramas ambientales y de comportamiento del sistema con ejemplos prácticos.</div>
+            </li>
+            <li class="dropdown-item-tooltip">
+              <a class="dropdown-item" href="VidObj.html">Modelo Orientado a Objetos</a>
+              <div class="tooltip-description">Videos de demostración del diagrama de clases y la arquitectura orientada a objetos implementada.</div>
+            </li>
+            <li class="dropdown-item-tooltip">
+              <a class="dropdown-item" href="VidCasos.html">Diagrama de casos de uso del Sistema</a>
+              <div class="tooltip-description">Videos que muestran paso a paso los diferentes casos de uso del sistema y cómo interactúan los usuarios.</div>
+            </li>
           </ul>
         </li>
         
@@ -139,8 +287,14 @@
             CONTACTOS
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="contact.html#formulario">Formulario de Contacto</a></li>
-            <li><a class="dropdown-item" href="RedesSoci.html">Ubicación y redes</a></li>
+            <li class="dropdown-item-tooltip">
+              <a class="dropdown-item" href="contact.html#formulario">Formulario de Contacto</a>
+              <div class="tooltip-description">Formulario para que usuarios, clientes potenciales e interesados se comuniquen con el equipo del proyecto.</div>
+            </li>
+            <li class="dropdown-item-tooltip">
+              <a class="dropdown-item" href="RedesSoci.html">Ubicación y redes</a>
+              <div class="tooltip-description">Información de ubicación del gimnasio, redes sociales, teléfono y canales de comunicación disponibles.</div>
+            </li>
             <li><hr class="dropdown-divider"></li>
           </ul>
         </li>
@@ -175,7 +329,7 @@
       </div>
     </div>
     
-    <div class="carousel-item h-100" style="background: url('images/cross.jpeg') center/cover no-repeat;">
+    <div class="carousel-item h-100" style="background: url('images/pesas.jpg') center/cover no-repeat;">
       <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
         <div>
           <h1 class="display-4 fw-bold">Clases Grupales</h1>
@@ -456,6 +610,342 @@ Asimismo, los usuarios no cuentan con una plataforma virtual donde puedan regist
     <p class="mb-0">&copy; 2025 Body Xtreme Gym | Diseñado por Danna</p>
   </div>
 </footer>
+
+<!-- MODALES PARA DESCRIPCIONES -->
+
+<!-- Modal Modelo Ambiental -->
+<div class="modal fade" id="modalAmbientalDesc" tabindex="-1" aria-labelledby="modalAmbientalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalAmbientalLabel">Descripción - Modelo Ambiental</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>El <strong>Modelo Ambiental</strong> es un diagrama que muestra el contexto del sistema de registro del gimnasio Body Xtreme. Incluye:</p>
+        <ul>
+          <li><strong>Actores externos:</strong> Miembros, Administradores, Instructores</li>
+          <li><strong>Factores ambientales:</strong> Sistema de pagos, Base de datos, Servidores</li>
+          <li><strong>Interfaces:</strong> Cómo interactúan los actores con el sistema</li>
+        </ul>
+        <p>Este diagrama es fundamental para entender cómo el sistema se relaciona con su entorno y qué elementos externos lo afectan.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="analisis.html#diagramas" class="btn btn-success">Ver Diagrama Completo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Modelo de Comportamiento -->
+<div class="modal fade" id="modalComportamientoDesc" tabindex="-1" aria-labelledby="modalComportamientoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalComportamientoLabel">Descripción - Modelo de Comportamiento</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>El <strong>Modelo de Comportamiento</strong> describe cómo el sistema Body Xtreme funciona dinámicamente a través del tiempo:</p>
+        <ul>
+          <li><strong>Procesos:</strong> Registro, Pago, Renovación de membresía</li>
+          <li><strong>Flujos de datos:</strong> Cómo circula la información en el sistema</li>
+          <li><strong>Estados:</strong> Diferentes estados de una membresía (Activa, Vencida, Cancelada)</li>
+        </ul>
+        <p>Este diagrama es esencial para comprender la lógica operativa y el flujo de información del sistema.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="model.html" class="btn btn-success">Ver Diagrama Completo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal OOP -->
+<div class="modal fade" id="modalOOPDesc" tabindex="-1" aria-labelledby="modalOOPLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalOOPLabel">Descripción - Diagrama Orientado a Objetos</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>El <strong>Diagrama Orientado a Objetos</strong> muestra la estructura de clases del sistema:</p>
+        <ul>
+          <li><strong>Clase Miembro:</strong> Atributos y métodos de los usuarios del gimnasio</li>
+          <li><strong>Clase Membresía:</strong> Gestión de paquetes y vencimientos</li>
+          <li><strong>Clase Instructor:</strong> Información y horarios de instructores</li>
+          <li><strong>Clase Pago:</strong> Registro de transacciones</li>
+        </ul>
+        <p>Las relaciones entre clases muestran cómo los objetos interactúan entre sí.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="orientado.html#clases" class="btn btn-success">Ver Diagrama Completo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Casos de Uso -->
+<div class="modal fade" id="modalCasosDesc" tabindex="-1" aria-labelledby="modalCasosLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalCasosLabel">Descripción - Casos de Uso</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>El <strong>Diagrama de Casos de Uso</strong> describe las interacciones entre actores y el sistema:</p>
+        <ul>
+          <li><strong>Casos del Miembro:</strong> Registrarse, Pagar membresía, Ver información</li>
+          <li><strong>Casos del Administrador:</strong> Gestionar miembros, Ver reportes, Administrar instructores</li>
+          <li><strong>Casos del Instructor:</strong> Ver horario, Reportar asistencia, Ver estudiantes</li>
+        </ul>
+        <p>Este diagrama es útil para entender qué acciones puede realizar cada tipo de usuario.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="Casos.html" class="btn btn-success">Ver Diagrama Completo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Marco Teórico -->
+<div class="modal fade" id="modalMarcoDesc" tabindex="-1" aria-labelledby="modalMarcoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalMarcoLabel">Resumen - Marco Teórico</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>El <strong>Marco Teórico</strong> fundamenta el proyecto en conceptos clave:</p>
+        <ul>
+          <li><strong>Análisis de Sistemas:</strong> Métodos para estudiar sistemas complejos</li>
+          <li><strong>Ingeniería de Software:</strong> Procesos para desarrollar software de calidad</li>
+          <li><strong>Modelado de Datos:</strong> Técnicas para diseñar bases de datos</li>
+          <li><strong>UML:</strong> Lenguaje unificado para modelar sistemas</li>
+        </ul>
+        <p>Este marco proporciona las bases científicas y metodológicas del proyecto.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="marco.html" class="btn btn-success">Ver Marco Completo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal SCRUM -->
+<div class="modal fade" id="modalSCRUMDesc" tabindex="-1" aria-labelledby="modalSCRUMLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalSCRUMLabel">Descripción - Modelo SCRUM</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>SCRUM</strong> es la metodología ágil utilizada para gestionar el proyecto:</p>
+        <ul>
+          <li><strong>Sprints:</strong> Ciclos cortos de desarrollo (2-4 semanas)</li>
+          <li><strong>Product Backlog:</strong> Lista de funcionalidades a implementar</li>
+          <li><strong>Daily Standup:</strong> Reuniones diarias de coordinación</li>
+          <li><strong>Retrospectivas:</strong> Análisis de mejora continua</li>
+        </ul>
+        <p>SCRUM permite entregas frecuentes, adaptabilidad y comunicación constante con stakeholders.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="modelSCRUM.html" class="btn btn-success">Ver Metodología Completa</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Videos Ambiental -->
+<div class="modal fade" id="modalVidAmb" tabindex="-1" aria-labelledby="modalVidAmbLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalVidAmbLabel">Guía de Estudio - Modelos Ambiental y Comportamiento</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Temas a cubrir en los videos:</strong></p>
+        <ol>
+          <li>Concepto de modelo ambiental y su importancia</li>
+          <li>Identificación de actores y su rol en el sistema</li>
+          <li>Flujo de datos y procesos principales</li>
+          <li>Interrelación entre componentes del sistema</li>
+          <li>Casos de uso prácticos del gimnasio Body Xtreme</li>
+        </ol>
+        <p><strong>Duración aproximada:</strong> 20-30 minutos</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="videos.html" class="btn btn-success">Ver Videos</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Videos OOP -->
+<div class="modal fade" id="modalVidOOP" tabindex="-1" aria-labelledby="modalVidOOPLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalVidOOPLabel">Guía de Estudio - Modelo OOP</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Temas a cubrir en los videos:</strong></p>
+        <ol>
+          <li>Conceptos fundamentales de POO</li>
+          <li>Definición de clases y atributos</li>
+          <li>Métodos y comportamientos de objetos</li>
+          <li>Relaciones entre clases (herencia, composición)</li>
+          <li>Diagrama de clases del sistema Body Xtreme</li>
+        </ol>
+        <p><strong>Duración aproximada:</strong> 25-35 minutos</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="VidObj.html" class="btn btn-success">Ver Videos</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Videos Casos -->
+<div class="modal fade" id="modalVidCasos" tabindex="-1" aria-labelledby="modalVidCasosLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalVidCasosLabel">Guía de Estudio - Casos de Uso</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Temas a cubrir en los videos:</strong></p>
+        <ol>
+          <li>¿Qué es un caso de uso?</li>
+          <li>Actores y su rol en los casos de uso</li>
+          <li>Flujo principal y flujos alternativos</li>
+          <li>Relaciones entre casos de uso</li>
+          <li>Casos de uso reales del gimnasio Body Xtreme</li>
+        </ol>
+        <p><strong>Duración aproximada:</strong> 20-25 minutos</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="VidCasos.html" class="btn btn-success">Ver Videos</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Contacto Info -->
+<div class="modal fade" id="modalContactInfo" tabindex="-1" aria-labelledby="modalContactInfoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalContactInfoLabel">Información de Contacto</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Envíanos tu mensaje a través del formulario y nos comunicaremos contigo en breve.</strong></p>
+        <ul>
+          <li><strong>Email:</strong> info@bodyxtreme.com</li>
+          <li><strong>Teléfono:</strong> +591 3-4567890</li>
+          <li><strong>Horario de atención:</strong> Lunes a viernes, 9:00 - 18:00</li>
+        </ul>
+        <p><strong>También puedes contactarnos a través de nuestras redes sociales.</strong></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="contact.html#formulario" class="btn btn-success">Ir al Formulario</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Contacto Help -->
+<div class="modal fade" id="modalContactHelp" tabindex="-1" aria-labelledby="modalContactHelpLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalContactHelpLabel">Ayuda</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Preguntas frecuentes:</strong></p>
+        <ul>
+          <li>¿Cómo registro mi membresía? - Accede a la sección de contacto y completa el formulario</li>
+          <li>¿Cuál es el costo? - Consulta nuestra página de servicios</li>
+          <li>¿Qué documentos necesito? - Cédula de identidad y comprobante de domicilio</li>
+          <li>¿Puedo cancelar mi membresía? - Sí, contacta con administración</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Social Info -->
+<div class="modal fade" id="modalSocialInfo" tabindex="-1" aria-labelledby="modalSocialInfoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalSocialInfoLabel">Datos de Contacto</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Síguenos en nuestras redes sociales:</strong></p>
+        <ul>
+          <li><i class="fab fa-facebook"></i> Facebook: /BodyXtremeGym</li>
+          <li><i class="fab fa-instagram"></i> Instagram: @bodyxtremegym</li>
+          <li><i class="fab fa-twitter"></i> Twitter: @BodyXtreme</li>
+          <li><i class="fab fa-whatsapp"></i> WhatsApp: +591 76543210</li>
+        </ul>
+        <p><strong>Ubicación:</strong> Calle Principal #123, La Paz, Bolivia</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="RedesSoci.html" class="btn btn-success">Ver Mapa</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Contact Info (Duplicado para no confundir) -->
+<div class="modal fade" id="modalContactInfo" tabindex="-1" aria-labelledby="modalContactInfoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalContactInfoLabel">Información de Contacto</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Envíanos tu mensaje a través del formulario y nos comunicaremos contigo en breve.</strong></p>
+        <ul>
+          <li><strong>Email:</strong> info@bodyxtreme.com</li>
+          <li><strong>Teléfono:</strong> +591 3-4567890</li>
+          <li><strong>Horario de atención:</strong> Lunes a viernes, 9:00 - 18:00</li>
+        </ul>
+        <p><strong>También puedes contactarnos a través de nuestras redes sociales.</strong></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="contact.html#formulario" class="btn btn-success">Ir al Formulario</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
